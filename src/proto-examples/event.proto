@@ -55,13 +55,9 @@ message Page {
 }
 
 enum Status {
-  // if finished or deleted
   None = 0;
-  // wait ~ still being created
-  Wait = 1;
-  // created ~ created but not live yet
+  Wait = 1; // being created
   Created = 2;
-  // live ~ event started
   Live = 3;
 }
 
