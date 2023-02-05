@@ -1,0 +1,745 @@
+{
+  "package": "event",
+  "imports": [
+    "google/api/annotations.proto",
+    "google/protobuf/empty.proto",
+    "google/protobuf/timestamp.proto"
+  ],
+  "syntax": "proto3",
+  "root": {
+    "name": "",
+    "fullName": "",
+    "syntaxType": "ProtoRoot",
+    "nested": {
+      "event": {
+        "name": "event",
+        "fullName": ".event",
+        "syntaxType": "NamespaceDefinition",
+        "nested": {
+          "EventCreateRequest": {
+            "name": "EventCreateRequest",
+            "fullName": ".event.EventCreateRequest",
+            "comment": null,
+            "syntaxType": "MessageDefinition",
+            "fields": {
+              "Name": {
+                "options": {
+                  "json_name": "name"
+                },
+                "name": "Name",
+                "fullName": ".event.EventCreateRequest.Name",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 1,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              },
+              "Description": {
+                "options": {
+                  "json_name": "description"
+                },
+                "name": "Description",
+                "fullName": ".event.EventCreateRequest.Description",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 2,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              },
+              "Strategy": {
+                "options": {
+                  "json_name": "strategy"
+                },
+                "name": "Strategy",
+                "fullName": ".event.EventCreateRequest.Strategy",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 3,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              }
+            }
+          },
+          "EventCreateResponse": {
+            "name": "EventCreateResponse",
+            "fullName": ".event.EventCreateResponse",
+            "comment": null,
+            "syntaxType": "MessageDefinition",
+            "fields": {
+              "ID": {
+                "options": {
+                  "json_name": "id"
+                },
+                "name": "ID",
+                "fullName": ".event.EventCreateResponse.ID",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 1,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              },
+              "Name": {
+                "options": {
+                  "json_name": "name"
+                },
+                "name": "Name",
+                "fullName": ".event.EventCreateResponse.Name",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 2,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              },
+              "Description": {
+                "options": {
+                  "json_name": "description"
+                },
+                "name": "Description",
+                "fullName": ".event.EventCreateResponse.Description",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 3,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              }
+            }
+          },
+          "DateRange": {
+            "name": "DateRange",
+            "fullName": ".event.DateRange",
+            "comment": null,
+            "syntaxType": "MessageDefinition",
+            "fields": {
+              "From": {
+                "options": {
+                  "json_name": "from"
+                },
+                "name": "From",
+                "fullName": ".event.DateRange.From",
+                "comment": null,
+                "type": {
+                  "value": "google.protobuf.Timestamp",
+                  "syntaxType": "Identifier",
+                  "resolvedValue": ".google.protobuf.Timestamp"
+                },
+                "id": 1,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              },
+              "To": {
+                "options": {
+                  "json_name": "to"
+                },
+                "name": "To",
+                "fullName": ".event.DateRange.To",
+                "comment": null,
+                "type": {
+                  "value": "google.protobuf.Timestamp",
+                  "syntaxType": "Identifier",
+                  "resolvedValue": ".google.protobuf.Timestamp"
+                },
+                "id": 2,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              }
+            }
+          },
+          "EventDeleteRequest": {
+            "name": "EventDeleteRequest",
+            "fullName": ".event.EventDeleteRequest",
+            "comment": null,
+            "syntaxType": "MessageDefinition",
+            "fields": {
+              "ID": {
+                "options": {
+                  "json_name": "id"
+                },
+                "name": "ID",
+                "fullName": ".event.EventDeleteRequest.ID",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 1,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              }
+            }
+          },
+          "EventUpdateRequest": {
+            "name": "EventUpdateRequest",
+            "fullName": ".event.EventUpdateRequest",
+            "comment": null,
+            "syntaxType": "MessageDefinition",
+            "fields": {
+              "ID": {
+                "options": {
+                  "json_name": "id"
+                },
+                "name": "ID",
+                "fullName": ".event.EventUpdateRequest.ID",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 1,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              },
+              "Name": {
+                "options": {
+                  "json_name": "name"
+                },
+                "name": "Name",
+                "fullName": ".event.EventUpdateRequest.Name",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 2,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              },
+              "Description": {
+                "options": {
+                  "json_name": "description"
+                },
+                "name": "Description",
+                "fullName": ".event.EventUpdateRequest.Description",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 3,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              }
+            }
+          },
+          "EventUpdateResponse": {
+            "name": "EventUpdateResponse",
+            "fullName": ".event.EventUpdateResponse",
+            "comment": null,
+            "syntaxType": "MessageDefinition",
+            "fields": {
+              "ID": {
+                "options": {
+                  "json_name": "id"
+                },
+                "name": "ID",
+                "fullName": ".event.EventUpdateResponse.ID",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 1,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              },
+              "Name": {
+                "options": {
+                  "json_name": "name"
+                },
+                "name": "Name",
+                "fullName": ".event.EventUpdateResponse.Name",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 2,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              },
+              "Description": {
+                "options": {
+                  "json_name": "description"
+                },
+                "name": "Description",
+                "fullName": ".event.EventUpdateResponse.Description",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 3,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              }
+            }
+          },
+          "EventDetailRequest": {
+            "name": "EventDetailRequest",
+            "fullName": ".event.EventDetailRequest",
+            "comment": null,
+            "syntaxType": "MessageDefinition",
+            "fields": {
+              "ID": {
+                "options": {
+                  "json_name": "id"
+                },
+                "name": "ID",
+                "fullName": ".event.EventDetailRequest.ID",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 1,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              }
+            }
+          },
+          "EventDetailResponse": {
+            "name": "EventDetailResponse",
+            "fullName": ".event.EventDetailResponse",
+            "comment": null,
+            "syntaxType": "MessageDefinition",
+            "fields": {
+              "ID": {
+                "options": {
+                  "json_name": "id"
+                },
+                "name": "ID",
+                "fullName": ".event.EventDetailResponse.ID",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 1,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              },
+              "Name": {
+                "options": {
+                  "json_name": "name"
+                },
+                "name": "Name",
+                "fullName": ".event.EventDetailResponse.Name",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 2,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              },
+              "Description": {
+                "options": {
+                  "json_name": "description"
+                },
+                "name": "Description",
+                "fullName": ".event.EventDetailResponse.Description",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 3,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              }
+            }
+          },
+          "Page": {
+            "name": "Page",
+            "fullName": ".event.Page",
+            "comment": null,
+            "syntaxType": "MessageDefinition",
+            "fields": {
+              "Offset": {
+                "options": {
+                  "json_name": "offset"
+                },
+                "name": "Offset",
+                "fullName": ".event.Page.Offset",
+                "comment": null,
+                "type": {
+                  "value": "int64",
+                  "syntaxType": "BaseType"
+                },
+                "id": 1,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              },
+              "Limit": {
+                "options": {
+                  "json_name": "limit"
+                },
+                "name": "Limit",
+                "fullName": ".event.Page.Limit",
+                "comment": null,
+                "type": {
+                  "value": "int64",
+                  "syntaxType": "BaseType"
+                },
+                "id": 2,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              }
+            }
+          },
+          "Status": {
+            "name": "Status",
+            "fullName": ".event.Status",
+            "comment": null,
+            "syntaxType": "EnumDefinition",
+            "values": {
+              "None": 0,
+              "Wait": 1,
+              "Created": 2,
+              "Live": 3
+            }
+          },
+          "EventSearchRequest": {
+            "name": "EventSearchRequest",
+            "fullName": ".event.EventSearchRequest",
+            "comment": null,
+            "syntaxType": "MessageDefinition",
+            "fields": {
+              "Status": {
+                "options": {
+                  "json_name": "by_status"
+                },
+                "name": "Status",
+                "fullName": ".event.EventSearchRequest.Status",
+                "comment": null,
+                "type": {
+                  "value": "Status",
+                  "syntaxType": "Identifier",
+                  "resolvedValue": ".event.Status"
+                },
+                "id": 1,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              },
+              "DateRange": {
+                "options": {
+                  "json_name": "by_date"
+                },
+                "name": "DateRange",
+                "fullName": ".event.EventSearchRequest.DateRange",
+                "comment": null,
+                "type": {
+                  "value": "DateRange",
+                  "syntaxType": "Identifier",
+                  "resolvedValue": ".event.DateRange"
+                },
+                "id": 2,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              },
+              "Page": {
+                "options": {
+                  "json_name": "page"
+                },
+                "name": "Page",
+                "fullName": ".event.EventSearchRequest.Page",
+                "comment": null,
+                "type": {
+                  "value": "Page",
+                  "syntaxType": "Identifier",
+                  "resolvedValue": ".event.Page"
+                },
+                "id": 3,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              }
+            },
+            "oneofs": {
+              "Selection": {
+                "name": "Selection",
+                "fullName": ".event.EventSearchRequest.Selection",
+                "comment": null,
+                "oneof": [
+                  "Status",
+                  "DateRange"
+                ]
+              }
+            }
+          },
+          "Event": {
+            "name": "Event",
+            "fullName": ".event.Event",
+            "comment": null,
+            "syntaxType": "MessageDefinition",
+            "fields": {
+              "ID": {
+                "options": {
+                  "json_name": "id"
+                },
+                "name": "ID",
+                "fullName": ".event.Event.ID",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 1,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              },
+              "Name": {
+                "options": {
+                  "json_name": "name"
+                },
+                "name": "Name",
+                "fullName": ".event.Event.Name",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 2,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              },
+              "Description": {
+                "options": {
+                  "json_name": "description"
+                },
+                "name": "Description",
+                "fullName": ".event.Event.Description",
+                "comment": null,
+                "type": {
+                  "value": "string",
+                  "syntaxType": "BaseType"
+                },
+                "id": 3,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              }
+            }
+          },
+          "EventSearchResponse": {
+            "name": "EventSearchResponse",
+            "fullName": ".event.EventSearchResponse",
+            "comment": null,
+            "syntaxType": "MessageDefinition",
+            "fields": {
+              "Events": {
+                "options": {
+                  "json_name": "event"
+                },
+                "name": "Events",
+                "fullName": ".event.EventSearchResponse.Events",
+                "comment": null,
+                "type": {
+                  "value": "Event",
+                  "syntaxType": "Identifier",
+                  "resolvedValue": ".event.Event"
+                },
+                "rule": "repeated",
+                "id": 1,
+                "required": false,
+                "optional": true,
+                "repeated": true,
+                "map": false
+              },
+              "Page": {
+                "options": {
+                  "json_name": "page"
+                },
+                "name": "Page",
+                "fullName": ".event.EventSearchResponse.Page",
+                "comment": null,
+                "type": {
+                  "value": "Page",
+                  "syntaxType": "Identifier",
+                  "resolvedValue": ".event.Page"
+                },
+                "id": 2,
+                "required": false,
+                "optional": true,
+                "repeated": false,
+                "map": false
+              }
+            }
+          },
+          "event": {
+            "name": "event",
+            "fullName": ".event.event",
+            "comment": null,
+            "syntaxType": "ServiceDefinition",
+            "methods": {
+              "Create": {
+                "options": {
+                  "(google.api.http).post": "/event",
+                  "(google.api.http).body": "*"
+                },
+                "name": "Create",
+                "fullName": ".event.event.Create",
+                "comment": null,
+                "requestType": {
+                  "value": "EventCreateRequest",
+                  "syntaxType": "Identifier",
+                  "resolvedValue": ".event.EventCreateRequest"
+                },
+                "responseType": {
+                  "value": "EventCreateResponse",
+                  "syntaxType": "Identifier",
+                  "resolvedValue": ".event.EventCreateResponse"
+                }
+              },
+              "Delete": {
+                "options": {
+                  "(google.api.http).delete": "/event/{ID}"
+                },
+                "name": "Delete",
+                "fullName": ".event.event.Delete",
+                "comment": null,
+                "requestType": {
+                  "value": "EventDeleteRequest",
+                  "syntaxType": "Identifier",
+                  "resolvedValue": ".event.EventDeleteRequest"
+                },
+                "responseType": {
+                  "value": "google.protobuf.Empty",
+                  "syntaxType": "Identifier",
+                  "resolvedValue": ".google.protobuf.Empty"
+                }
+              },
+              "Update": {
+                "options": {
+                  "(google.api.http).post": "/event/{ID}",
+                  "(google.api.http).body": "*"
+                },
+                "name": "Update",
+                "fullName": ".event.event.Update",
+                "comment": null,
+                "requestType": {
+                  "value": "EventUpdateRequest",
+                  "syntaxType": "Identifier",
+                  "resolvedValue": ".event.EventUpdateRequest"
+                },
+                "responseType": {
+                  "value": "EventUpdateResponse",
+                  "syntaxType": "Identifier",
+                  "resolvedValue": ".event.EventUpdateResponse"
+                }
+              },
+              "Detail": {
+                "options": {
+                  "(google.api.http).get": "/event/{ID}"
+                },
+                "name": "Detail",
+                "fullName": ".event.event.Detail",
+                "comment": null,
+                "requestType": {
+                  "value": "EventDetailRequest",
+                  "syntaxType": "Identifier",
+                  "resolvedValue": ".event.EventDetailRequest"
+                },
+                "responseType": {
+                  "value": "EventDetailResponse",
+                  "syntaxType": "Identifier",
+                  "resolvedValue": ".event.EventDetailResponse"
+                }
+              },
+              "Search": {
+                "options": {
+                  "(google.api.http).post": "/event/search",
+                  "(google.api.http).body": "*"
+                },
+                "name": "Search",
+                "fullName": ".event.event.Search",
+                "comment": null,
+                "requestType": {
+                  "value": "EventSearchRequest",
+                  "syntaxType": "Identifier",
+                  "resolvedValue": ".event.EventSearchRequest"
+                },
+                "responseType": {
+                  "value": "EventSearchResponse",
+                  "syntaxType": "Identifier",
+                  "resolvedValue": ".event.EventSearchResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "syntaxType": "ProtoDocument"
+}

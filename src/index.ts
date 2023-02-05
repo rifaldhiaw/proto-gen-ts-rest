@@ -1,75 +1,13 @@
 import fs from "fs";
 import * as t from "proto-parser";
+import { transformEnum } from "./lib/enum";
+import { transformMessage } from "./lib/message";
 
 const PROTO_PATH = __dirname + "/proto-examples/";
-
-const typeMap: Record<string, string> = {
-  string: "z.string()",
-  int32: "z.number()",
-  int64: "z.number()",
-  bool: "z.boolean()",
-  float: "z.number()",
-  double: "z.number()",
-  bytes: "z.string()",
-};
-
-const IdentifierMap: Record<string, string> = {
-  "google.protobuf.Timestamp": "z.string()",
-};
 
 const responseMap: Record<string, string> = {
   "google.protobuf.Empty": "z.object({})",
 };
-
-function transformEnum(enumDef: t.EnumDefinition, outputFile: string): void {
-  // append key to file as a comment
-  fs.appendFileSync(outputFile, `export const ${enumDef.name} = z.enum([ `);
-
-  if (!enumDef.values) {
-    throw new Error("Enum has no values");
-  }
-
-  const values = Object.keys(enumDef.values)
-    .map((key) => `"${key}"`)
-    .join(", ");
-
-  fs.appendFileSync(outputFile, `${values},`);
-  fs.appendFileSync(outputFile, `]);\n\n`);
-}
-
-function transformMessage(
-  message: t.MessageDefinition,
-  outputFile: string
-): void {
-  // append key to file as a comment
-  fs.appendFileSync(outputFile, `export const ${message.name} = z.object({`);
-
-  if (!message.fields) {
-    throw new Error("Message has no fields");
-  }
-
-  Object.values(message.fields).forEach((field) => {
-    if (!field.type) {
-      throw new Error("Field has no type");
-    }
-
-    const name = field?.options?.json_name || field.name;
-
-    if (field.type.syntaxType === "BaseType") {
-      fs.appendFileSync(
-        outputFile,
-        `\n  ${name}: ${typeMap[field.type.value]},`
-      );
-    }
-
-    if (field.type.syntaxType === "Identifier") {
-      const type = IdentifierMap[field.type.value] || field.type.value;
-      fs.appendFileSync(outputFile, `\n  ${name}: ${type},`);
-    }
-  });
-
-  fs.appendFileSync(outputFile, `\n});\n\n`);
-}
 
 function transformService(
   service: t.ServiceDefinition,
@@ -161,17 +99,27 @@ const c = initContract();`
 
       const protoDocument = t.parse(content) as t.ProtoDocument;
 
+      // write protoDocument to json file
+      fs.writeFileSync(
+        PROTO_PATH + file.replace(".proto", ".json"),
+        JSON.stringify(protoDocument, null, 2)
+      );
+
       if (protoDocument.root?.nested) {
         Object.values(protoDocument.root.nested).forEach((ns) => {
           if (ns.syntaxType === "NamespaceDefinition") {
             if (ns.nested) {
               Object.values(ns.nested).forEach((data) => {
                 if (data.syntaxType === "EnumDefinition") {
-                  transformEnum(data as t.EnumDefinition, outputFile);
+                  const enumResult = transformEnum(data as t.EnumDefinition);
+                  fs.appendFileSync(outputFile, enumResult);
                 }
 
                 if (data.syntaxType === "MessageDefinition") {
-                  transformMessage(data as t.MessageDefinition, outputFile);
+                  const messageResult = transformMessage(
+                    data as t.MessageDefinition
+                  );
+                  fs.appendFileSync(outputFile, messageResult);
                 }
 
                 if (data.syntaxType === "ServiceDefinition") {
