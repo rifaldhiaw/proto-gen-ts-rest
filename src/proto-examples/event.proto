@@ -1,0 +1,120 @@
+syntax = "proto3";
+
+package event;
+
+import "google/api/annotations.proto";
+import "google/protobuf/empty.proto";
+import "google/protobuf/timestamp.proto";
+
+message EventCreateRequest {
+  string Name = 1 [json_name="name"];
+  string Description = 2 [json_name="description"];
+  string Strategy = 3 [json_name="strategy"];
+}
+
+message EventCreateResponse {
+  string ID = 1 [json_name = "id"];
+  string Name = 2 [json_name = "name"];
+  string Description = 3 [json_name="description"];
+}
+
+message DateRange {
+  google.protobuf.Timestamp From = 1 [json_name = "from"];
+  google.protobuf.Timestamp To = 2 [json_name = "to"];
+}
+
+message EventDeleteRequest {
+  string ID = 1 [json_name="id"];
+}
+
+message EventUpdateRequest {
+  string ID = 1 [json_name="id"];
+  string Name = 2 [json_name="name"];
+  string Description = 3 [json_name="description"];
+}
+
+message EventUpdateResponse {
+  string ID = 1 [json_name="id"];
+  string Name = 2 [json_name="name"];
+  string Description = 3 [json_name="description"];
+}
+
+message EventDetailRequest {
+  string ID = 1 [json_name="id"];
+}
+
+message EventDetailResponse {
+  string ID = 1 [json_name="id"];
+  string Name = 2 [json_name="name"];
+  string Description = 3 [json_name="description"];
+}
+
+message Page {
+  int64 Offset = 1 [json_name="offset"];
+  int64 Limit = 2 [json_name="limit"];
+}
+
+enum Status {
+  // if finished or deleted
+  None = 0;
+  // wait ~ still being created
+  Wait = 1;
+  // created ~ created but not live yet
+  Created = 2;
+  // live ~ event started
+  Live = 3;
+}
+
+message EventSearchRequest {
+  oneof Selection {
+    Status Status = 1 [json_name="by_status"];
+    DateRange DateRange = 2 [json_name="by_date"];
+  }
+  Page Page = 3 [json_name="page"];
+}
+
+message Event {
+  string ID = 1 [json_name="id"];
+  string Name = 2 [json_name="name"];
+  string Description = 3 [json_name="description"];
+}
+
+message EventSearchResponse {
+  repeated Event Events = 1 [json_name="event"];
+  Page Page = 2 [json_name="page"];
+}
+
+service event {
+  rpc Create(EventCreateRequest) returns (EventCreateResponse) {
+    option (google.api.http) = {
+      post: "/event",
+      body: "*",
+    };
+  }
+
+  rpc Delete(EventDeleteRequest) returns (google.protobuf.Empty) {
+    option (google.api.http) = {
+      delete: "/event/{ID}"
+    };
+  }
+
+  rpc Update(EventUpdateRequest) returns (EventUpdateResponse) {
+    option (google.api.http) = {
+      post: "/event/{ID}",
+      body: "*"
+    };
+  }
+
+  rpc Detail(EventDetailRequest) returns (EventDetailResponse) {
+    option (google.api.http) = {
+      get: "/event/{ID}"
+    };
+  }
+
+  rpc Search(EventSearchRequest) returns (EventSearchResponse) {
+    option (google.api.http) = {
+      post: "/event/search",
+      body: "*"
+    };
+  }
+}

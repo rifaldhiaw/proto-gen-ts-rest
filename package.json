@@ -1,0 +1,23 @@
+{
+  "name": "proto-gen-ts-rest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "tsx src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@ts-rest/core": "^3.16.1",
+    "@types/node": "^18.11.19",
+    "tsx": "^3.12.2",
+    "typescript": "^4.9.5"
+  },
+  "dependencies": {
+    "proto-parser": "^0.0.9",
+    "zod": "^3.20.2"
+  }
+}
